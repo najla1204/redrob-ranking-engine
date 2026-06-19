@@ -1,17 +1,17 @@
 team_name: "redrob-ranking-engine"
 
 primary_contact:
-  name: "Your Name Here"
-  email: "your@email.com"
-  phone: "+91-XXXXXXXXXX"
+  name: "Najla Fathima A"
+  email: "reachnajla@gmail.com"
+  phone: "+91-9843636330"
 
 team_members:
-  - name: "Your Name Here"
-    email: "your@email.com"
+  - name: "Rajakumaran P"
+    email: "reachrajakumaran@gmail.com"
     role: "Solo"
 
-github_repo: "https://github.com/YOUR_USERNAME/redrob-ranking-engine"
-sandbox_link: "https://huggingface.co/spaces/YOUR_USERNAME/redrob-ranker"
+github_repo: "https://github.com/najla1204/redrob-ranking-engine"
+sandbox_link: "https://huggingface.co/spaces/najla1204/redrob-ranking-engine"
 
 reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
 
