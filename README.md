@@ -11,7 +11,7 @@ license: mit
 short_description: Intelligent Candidate Ranking — Redrob Hackathon
 ---
 
-# 🎯 Redrob Intelligent Candidate Ranking Engine
+# Redrob Intelligent Candidate Ranking Engine
 
 Multi-signal hybrid scorer for the Redrob Hackathon 2024.
 
