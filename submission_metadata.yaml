@@ -1,0 +1,55 @@
+team_name: "redrob-ranking-engine"
+
+primary_contact:
+  name: "Your Name Here"
+  email: "your@email.com"
+  phone: "+91-XXXXXXXXXX"
+
+team_members:
+  - name: "Your Name Here"
+    email: "your@email.com"
+    role: "Solo"
+
+github_repo: "https://github.com/YOUR_USERNAME/redrob-ranking-engine"
+sandbox_link: "https://huggingface.co/spaces/YOUR_USERNAME/redrob-ranker"
+
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+
+compute:
+  platform: "Local CPU"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.11"
+  os: "Ubuntu / macOS"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "Claude"
+
+ai_usage_summary: |
+  Used Claude for architecture discussion, design review, and code review.
+  No candidate data was fed to any external LLM or API.
+  All ranking logic is local, deterministic, and runs without network access.
+  The JD_ROLE_DNA structure was manually crafted by reading the JD carefully.
+
+methodology_summary: |
+  Five-component hybrid scorer. TF-IDF (bigrams, sublinear TF) + LSA (150 SVD components)
+  provides semantic similarity between candidate narrative and JD role DNA text (0.28 weight).
+  Technical depth scorer (0.32) applies a trust multiplier (endorsements + duration plausibility)
+  to candidate skills, catching keyword stuffers. Career trajectory scorer (0.22) detects title
+  alignment, consulting-only backgrounds, AI relevance in current role, and product company
+  history — all explicit JD disqualifiers. Availability scorer (0.12) uses Redrob behavioral
+  signals: open-to-work flag, activity recency, recruiter response rate, GitHub activity, and
+  interview completion. Constraint fit (0.06) covers location, notice period, and work mode.
+  A multiplicative honeypot penalty (6 integrity checks) zeroes scores for impossible profiles.
+  Runtime: ~3.5 minutes for 100K candidates on CPU, no GPU, no network, no external APIs.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
